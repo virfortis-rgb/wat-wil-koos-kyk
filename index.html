@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wat wil Koos kyk?</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Elite&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="bg-dark">
+    <div class="title text-bg-dark d-flex flex-column align-items-center justify-content-center m-3 mt-5 text-center">
+      <h1 class="special-elite-regular">WAT WIL KOOS KYK?</h1>
+      <p class="inter-p">'n Website wat die Jouberts, maar meestal Koos, help om op 'n fliek te besluit.
+        <br>Ons verstaan dat die dinge moeilik is en daarom bied ons hierdie diens.
+        <br>As die fliek nie op Netflix is nie, is dit 'n jammerte. Sorrie... 😇
+      </p>
+    </div>
+    <div class="h-auto d-flex flex-column align-items-center justify-content-center m-3 mb-5 p-4 shadow p-3 rounded" style="background-color: rgb(31, 31, 31); color: white;">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <h3 class="inter-bold m-3">Help ons eers so bietjie ...</h3>
+      </div>
+      <div class="container-searbox d-flex flex-column align-items-center justify-content-center mb-3">
+        <form class="container-form m-3">
+          <select id="select-genre" class="form-select text-bg-dark mb-4 inter-bold" aria-label="Default select example">
+            <option>Kies 'n genre</option>
+          </select>
+          <div class="container-checkbox mb-4 d-none">
+            <div class="form-check mb-2">
+              <input class="form-check-input bg-dark" type="checkbox" value="" id="checkMovies">
+              <label class="form-check-label inter-p" for="checkMovies">
+                Flieks
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input bg-dark" type="checkbox" value="" id="checkSeries">
+              <label class="form-check-label inter-p" for="checkSeries">
+                Reekse
+              </label>
+            </div>
+            </div>
+            <button type="button" id="submit" class="btn btn-danger inter-bold w-100">Soek</button>
+          </form>
+        </div>
+
+        <div id="container-results" class="container-results d-none">
+          <h3 id="title-result" class="inter-bold m-3 mb-0">Blykbaar is die fliek populêr of watookal : </h3>
+          <div id="container-main-card" class="row justify-content-center">
+            <template id="movie-card-template">
+                <div class="card text-bg-dark col-lg-9 col-md-9 col-sm-12 m-5 mt-3">
+                  <img id="main-card-img" src="" class="card-img-top pt-2" alt="">
+                  <div class="card-body d-flex flex-column justify-content-between p-3 inter-p">
+                    <h3 class="main-card-title">Movie Title</h3>
+                    <p class="main-card-text inter-p">Description</p>
+                    <a id="netflix-button" href="" class="btn btn-danger mt-3" target="_blank">Kyk op Netflix</a>
+                  </div>
+                </div>
+            </template>
+          </div>
+
+          <h3 id="subtitle-results" class="inter-bold mb-4">en as jy nou nie daarvoor lus is nie...</h3>
+          <div class="container-cards-movies row justify-content-center gap-0">
+            <template id="movie-cards-template">
+              <div class="col-lg-4 col-md-6 col-sm-9 align-content-between mb-2">
+                <div class="card text-bg-dark h-100">
+                  <img id="cards-img" src="" class="card-img-top p-2" alt="">
+                  <div class="card-body d-flex flex-column justify-content-between p-3">
+                    <div>
+                      <h5 class="card-title">title</h5>
+                      <p class="card-text b-3">description</p>
+                    </div>
+                    <div>
+                      <a id="netflix-button" href="" class="btn btn-danger w-100 inter-bold mt-3" target="_blank">Kyk op Netflix</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- <footer class="footer mt-3 pt-3 text-center"> -->
+      <div class="footer">
+        <p class="text-center inter-p text-bg-dark">Met 🤍 gemaak deur Damien</p>
+      </div>
+
+    </div>
+
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
