@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 // Get input from user
 const genreInput = document.querySelector("#select-genre");
 const moviesInput = document.querySelector("#checkMovies");
@@ -19,14 +23,14 @@ const urlInput = (moviesBoolean, seriesBoolean, genre) => {
   return url;
 };
 
-// fetch('https://api.themoviedb.org/3/genre/tv/list?language=en', options)
+// fetch('https://api.themoviedb.org/3/genre/tv/list?language=en', OPTIONS)
 //   .then(res => res.json())
 //   .then(res => console.log(res))
 //   .catch(err => console.error(err));
 
 const dropDown = document.querySelector("#select-genre");
 addEventListener("load", (event) => {
-  fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
+  fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', OPTIONS)
     .then(response => response.json())
     .then((data) => {let coreGenres = data.genres
       coreGenres.forEach((genre) => {
@@ -76,7 +80,7 @@ const submit = (event) => {
   movieCardContainer.innerHTML = "";
   // console.log(`You selected genre: ${genreInput.value} and movies: ${moviesInput.checked} and series: ${seriesInput.checked}`)
   url = urlInput(moviesInput.checked, seriesInput.checked, genreInput.value)
-  fetch(url, options)
+  fetch(url, OPTIONS)
   .then(response => response.json())
   .then((data) => {
     if(genreInput.value != "Kies 'n genre") {
